@@ -4,7 +4,7 @@ import { View, StyleSheet, Text, Pressable, Image, ImageProps } from "react-nati
 type PropsImagen = {
     name: String,
     price: number,
-    imagen: ImageProps,
+    imagen: any,
     onAddToCart: () => void;
 }
 
@@ -23,7 +23,6 @@ export default function Card({name, price, imagen, onAddToCart}: PropsImagen) {
     )
     
 }
-
 
 const styles = StyleSheet.create({
     View: {
@@ -54,6 +53,7 @@ const styles = StyleSheet.create({
         height: 120,
         resizeMode: 'contain',
         marginBottom: 12,
+        borderRadius: 10
     },
     Boton: {
         borderRadius: 8,
