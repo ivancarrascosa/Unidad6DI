@@ -1,0 +1,26 @@
+import {createMaterialTopTabNavigator} from '@react-navigation/material-top-tabs'
+import { withLayoutContext } from 'expo-router'
+import React from 'react'
+import { SafeAreaView } from 'react-native-safe-area-context'
+
+const {Navigator} = createMaterialTopTabNavigator();
+const MaterialTopTabs = withLayoutContext(Navigator)
+
+export default function tabsLayout() {
+  return (
+    <SafeAreaView style={{flex: 1, backgroundColor: 'white'}} edges={['top']}>
+        <MaterialTopTabs screenOptions={{
+            tabBarActiveTintColor: 'purple',
+            tabBarIndicatorStyle: {backgroundColor: 'purple', height: 3},
+            tabBarLabelStyle: {fontWeight: 'bold'}
+        }}>
+            <MaterialTopTabs.Screen
+            name = "index"
+            options={{title: 'Posts'}}/>
+            <MaterialTopTabs.Screen
+            name = "galeria"
+            options={{title: 'Galería'}}/>
+        </MaterialTopTabs>
+    </SafeAreaView>
+  )
+}
